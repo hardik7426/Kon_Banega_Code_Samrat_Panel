@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaun Banega Code Samrat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Teko:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/libs/animate.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <!-- The main screen content -->
+      <div id="contentScreen" class="content-screen">
+        <div class="question-container">
+          <p class="round-indicator" id="roundIndicator">Round 1</p>
+          <img
+            src=""
+            alt="Puzzle Image"
+            id="questionImage"
+            class="question-image hidden"
+          />
+
+          <h1 id="questionText">Welcome to Kaun Banega Code Samrat!</h1>
+        </div>
+        <div class="options-container" id="optionsContainer">
+          <!-- Options will be dynamically inserted here -->
+        </div>
+
+        <!-- A layer to show the correct answer -->
+        <div id="answerOverlay" class="answer-overlay hidden">
+          <p>Correct Answer:</p>
+          <h2 id="answerText">Answer will appear here</h2>
+        </div>
+      </div>
+
+      <!-- The sidebar with timer and leaderboard -->
+      <aside class="sidebar">
+        <div class="round-timer-container">
+          <h2>Round Time</h2>
+          <span id="roundTimerText">00:00</span>
+        </div>
+
+        <div class="timer-container">
+          <h2>Question Timer</h2>
+          <div class="timer-circle" id="timerCircle">
+            <span id="timerText">30</span>
+          </div>
+        </div>
+
+        <div class="leaderboard">
+          <h2>Leaderboard</h2>
+          <ul id="leaderboardList">
+            <!-- Team scores will be dynamically inserted here -->
+          </ul>
+        </div>
+      </aside>
+
+      <!-- A 'curtain' to hide the screen, used for suspense or clearing the view -->
+      <div id="curtain" class="curtain visible">
+        <img src="/assets/images/KBCS_LOGO.png" alt="KBCS Logo" class="logo" />
+        <h2>The Quiz will begin shortly...</h2>
+      </div>
+      
+      <!-- NEW: THANK YOU OVERLAY -->
+      <div id="thankYouOverlay" class="curtain hidden">
+        <div class="credits">
+            <h1>Thank You for Participating!</h1>
+            
+            <h2>Event Managed By Faculties</h2>
+            <p>Shivangi Patel, Anju Kakkad, Twinkel Solanki</p>
+            
+            <h2>Site Developed By First Semester MCA Students</h2>
+            <p>Hardik Dharaiya, Mohit Yadav</p>
+            
+            <h2>Event Coordinators & Supporters (5th B.Tech)</h2>
+            <p>Jenil Dhokiya, Hardik Parekh, Kishan Sadhu, Durgesh Kanzariya</p>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Sound Effects -->
+    <audio id="soundCorrect" src="/assets/sounds/correct.mp3"></audio>
+    <audio id="soundWrong" src="/assets/sounds/wrong.mp3"></audio>
+    <audio id="soundTick" src="/assets/sounds/tick.mp3"></audio>
+
+    <!-- Library and custom script files -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

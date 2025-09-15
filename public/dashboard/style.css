@@ -1,0 +1,148 @@
+/* KBCS Dashboard Styles v3.0 - "Neon Night" Theme */
+
+/* --- Global Styles & New Color Palette --- */
+:root {
+    --bg-primary: #0d1b2a;
+    --bg-secondary: #1b263b;
+    --border-accent: #415a77;
+    --text-primary: #e0e1dd;
+    --text-secondary: #778da9;
+    --accent-pink: #ff006e;
+    --accent-teal: #00f5d4;
+    --accent-yellow: #fee440;
+    --accent-green: #27ae60;
+    --accent-red: #c0392b;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 25px;
+}
+
+/* --- Header --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    padding: 15px 25px;
+    border-radius: 12px;
+    border: 2px solid var(--border-accent);
+    margin-bottom: 25px;
+}
+h1 {
+    font-size: 1.6em;
+    margin: 0;
+    color: var(--accent-teal);
+}
+.status-indicator {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+.status-indicator .dot {
+    height: 14px; width: 14px; border-radius: 50%;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px;
+}
+.dot.disconnected { background-color: var(--accent-red); color: var(--accent-red); }
+.dot.connected { background-color: var(--accent-green); color: var(--accent-green); }
+
+/* --- Main Layout --- */
+.main-container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 25px;
+}
+.teams-section, .controls-section {
+    background-color: var(--bg-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid var(--border-accent);
+}
+h2 {
+    margin-top: 0;
+    border-bottom: 3px solid var(--accent-pink);
+    padding-bottom: 10px;
+    font-weight: 700;
+    color: var(--accent-yellow);
+    letter-spacing: 1px;
+}
+
+/* --- Teams Section --- */
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+.team-card {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    padding: 20px;
+    border-left: 6px solid var(--accent-teal);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+.team-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.team-name { font-size: 1.2em; font-weight: bold; }
+.team-score { font-size: 2em; font-weight: 700; color: var(--accent-teal); }
+.score-controls { display: flex; gap: 8px; }
+.score-controls button {
+    flex-grow: 1;
+    color: white; border: none; padding: 10px; border-radius: 6px;
+    cursor: pointer; font-size: 1.1em; font-weight: 700;
+    transition: all 0.2s ease;
+}
+.score-controls button:hover { opacity: 0.8; transform: translateY(-2px); }
+.score-controls .add { background-color: var(--accent-green); }
+.score-controls .subtract { background-color: var(--accent-red); }
+.placeholder-text { color: var(--text-secondary); }
+
+/* --- Controls Section --- */
+.control-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin-bottom: 25px;
+}
+.control-button {
+    color: var(--bg-primary); border: none; padding: 15px; border-radius: 8px;
+    cursor: pointer; font-size: 1em; font-weight: 700; text-align: center;
+    transition: all 0.2s ease;
+    background-color: var(--accent-teal);
+    box-shadow: 0 4px 0px #00b39a;
+}
+.control-button:hover { filter: brightness(1.1); }
+.control-button:active { transform: translateY(2px); box-shadow: 0 2px 0px #00b39a; }
+.control-button.clear { background-color: var(--accent-yellow); box-shadow-color: #d1b82e; }
+.control-button.lifeline { background-color: var(--accent-pink); box-shadow-color: #cc0058; }
+.control-button.round { background-color: var(--border-accent); box-shadow-color: #2b3e58; color: var(--text-primary); }
+.control-button.danger { background-color: var(--accent-red); box-shadow-color: #9a2b20; }
+
+/* --- Live Preview Section --- */
+.live-preview-section {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 2px solid var(--border-accent);
+}
+.live-preview-section h3 {
+    margin-top: 0; margin-bottom: 15px;
+    font-size: 1.3em; color: var(--accent-yellow);
+}
+.preview-question { font-size: 1.1em; margin-bottom: 10px; line-height: 1.5; }
+.preview-answer { font-size: 1.1em; font-weight: 500; }
+#previewAnswerText { color: var(--accent-teal); font-weight: 700; }
